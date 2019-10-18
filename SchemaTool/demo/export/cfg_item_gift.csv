@@ -1,0 +1,4 @@
+ID,ItemGiftType,ItemList,ItemWeight,DropCount,OpenCondition,OpenConditionDesc
+1003,1,"3001001,2|3001002,2",,0,"RoleLevel,10",ui_item_gift_open_cond_1003
+1004,2,"3001001,2|3001002,3",,1,"RoleLevel,11",ui_item_gift_open_cond_1004
+1005,3,"3001001,2|3001002,4",10|10,1,"RoleLevel,12",ui_item_gift_open_cond_1005

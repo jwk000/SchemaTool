@@ -1,0 +1,38 @@
+{
+    "p4_path": "cache/p4.txt",
+    "use_md5": true,
+    "md5_path": "cache/md5.json",
+    "schema_path": "xlscheck/schema/",
+    "check": {
+        "excel_path": [
+            "./client/",
+            "./shared/",
+            "./server/"
+        ]
+    },
+    "export": [
+        {
+            "excel_path": "./client/",
+            "export_path": "../client/PublishResources/config/client/",
+            "format": "lua",
+            "link_path": "../client/PublishResources/config"
+        },
+        {
+            "excel_path": "./shared/",
+            "export_path": "../client/PublishResources/config/shared/",
+            "format": "lua",
+            "link_path": "../client/PublishResources/config"
+        },
+        {
+            "excel_path": "./shared/",
+            "export_path": "../server/exe/resources/config/shared/",
+            "format": "csv"
+        },
+        {
+            "excel_path": "./server/",
+            "export_path": "../server/exe/resources/config/server/",
+            "format": "csv"
+        }
+    ],
+    "dump": []
+}

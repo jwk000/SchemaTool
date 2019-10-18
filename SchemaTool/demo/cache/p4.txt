@@ -1,0 +1,4 @@
+Server:p4.com:2002
+User:
+Password:
+Workspace:

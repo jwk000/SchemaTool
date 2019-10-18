@@ -1,0 +1,21 @@
+{
+    "p4_path":"",
+    "use_md5":false,
+    "md5_path":"cache/md5.json",
+    "schema_path": "xlscheck/schema/",
+    "export": [
+        {
+            "excel_path": "test",
+            "export_path": "test",
+            "format": "lua,csv"
+        }
+    ],
+    "dump": [
+        {
+            "schema_file": "aircraft.sc",
+            "template_dir": "xlscheck/template/",
+            "code_dir": "../server/src/products/Project_Mobile/components/aircraft/core/",
+            "csv_dir": "../resources/config/shared/aircraft/"
+        }
+    ]
+}

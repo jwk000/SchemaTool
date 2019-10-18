@@ -1,0 +1,5 @@
+﻿{% for row in rows -%}
+{% for cell in row -%}
+{% if cell contains ',' -%}"{{ cell }}"{% else -%}{{ cell }}{% endif -%}{% if forloop.last == false %},{% endif -%}
+{% endfor %}
+{% endfor %}

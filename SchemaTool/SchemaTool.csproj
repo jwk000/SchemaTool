@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{79E38040-B570-4988-8778-AE3CE51EDA26}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>SchemaTool</RootNamespace>
+    <AssemblyName>SchemaTool</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>app.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CodeGenTool.cs" />
+    <Compile Include="ConfigLoader.cs" />
+    <Compile Include="Excel2LuaTool.cs" />
+    <Compile Include="ExcelCheckTool.cs" />
+    <Compile Include="ExcelCreatTool.cs" />
+    <Compile Include="ExcelExportTool.cs" />
+    <Compile Include="ExcelLoader.cs" />
+    <Compile Include="JunctionPoint.cs" />
+    <Compile Include="P4Tool.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SchemaDesc.cs" />
+    <Compile Include="SchemaMeta.cs" />
+    <Compile Include="SchemaVisitor.cs" />
+    <Compile Include="SchemaLoader.cs" />
+    <Compile Include="TemplateRule.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="conf\App.config" />
+    <Antlr4 Include="conf\schemaLexer.g4">
+      <Generator>MSBuild:Compile</Generator>
+      <CustomToolNamespace>SchemaTool</CustomToolNamespace>
+      <Listener>False</Listener>
+    </Antlr4>
+    <None Include="demo\config\xls2lua.json" />
+    <None Include="demo\excel\cfg_pet_level.xlsx" />
+    <None Include="demo\excel\cfg_skill_view.xlsx" />
+    <None Include="demo\export\cfg_item.csv" />
+    <None Include="demo\export\cfg_item.lua" />
+    <None Include="demo\export\cfg_item_gift.csv" />
+    <None Include="demo\export\cfg_item_gift.lua" />
+    <None Include="demo\export\cfg_item_pet_exp.csv" />
+    <None Include="demo\export\cfg_item_pet_exp.lua" />
+    <None Include="demo\export\cfg_skill_view.csv" />
+    <None Include="demo\export\cfg_skill_view.lua" />
+    <None Include="NLog.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <Antlr4 Include="conf\schemaParser.g4">
+      <Generator>MSBuild:Compile</Generator>
+      <CustomToolNamespace>SchemaTool</CustomToolNamespace>
+      <Listener>False</Listener>
+    </Antlr4>
+    <None Include="demo\excel\cfg_item.xlsx" />
+    <None Include="demo\excel\cfg_item_gift.xlsx" />
+    <None Include="demo\excel\cfg_item_pet_exp.xlsx" />
+    <None Include="demo\template\export.csv" />
+    <None Include="demo\schema\item.sc" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Antlr4">
+      <Version>4.6.6</Version>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Antlr4.CodeGenerator">
+      <Version>4.6.6</Version>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Antlr4.Runtime">
+      <Version>4.6.6</Version>
+    </PackageReference>
+    <PackageReference Include="CommandLineParser">
+      <Version>2.6.0</Version>
+    </PackageReference>
+    <PackageReference Include="DotLiquid">
+      <Version>2.0.314</Version>
+    </PackageReference>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>12.0.2</Version>
+    </PackageReference>
+    <PackageReference Include="NLog">
+      <Version>4.6.7</Version>
+    </PackageReference>
+    <PackageReference Include="NPOI">
+      <Version>2.4.1</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="demo\cache\p4.txt" />
+    <Content Include="app.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

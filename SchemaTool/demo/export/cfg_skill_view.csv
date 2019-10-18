@@ -1,0 +1,4 @@
+ID,First.PhaseType,First.PhaseParam,Second.PhaseType,Second.PhaseParam,Third.PhaseType,Third.PhaseParam,Fourth.PhaseType,Fourth.PhaseParam
+1,1,1|Atk|200|Hit|2|500|1,,,,,,
+2,2,"1|0|3,4|AtkChain",6,1|0|30|60|1600|550|0.05|0.5|0|3,7,1|1000|5|130|500|2,4,2|0|10|Hit|10|200|1000
+3,8,1|0|2167|1600011_spine_atkult,2,"1|0|6,7|AtkUlt",9,1|1400|8|100|130,,
